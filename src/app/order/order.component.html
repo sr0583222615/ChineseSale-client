@@ -1,0 +1,53 @@
+<div class="rows">
+    <div class="col col-7">
+ <div   class="card" *ngFor="let o of orders; let i = index">
+    <p>num of order:{{o.ordersId}}</p>
+    <p>name:{{o.user.firstName}}{{o.user.lastName}}</p>
+    <p>phone:{{o.user.userPhone}}</p>
+    <p>email:{{o.user.userEmail}}</p>
+    <p>role:{{o.user.role}}</p>
+</div>  
+</div>
+ </div>
+<!-- 
+<div class="lottery-winners">
+    <table class="winners-table">
+        <tbody>
+            <div>
+                <h2 class="a">The orders of the gift </h2>
+                <p-table #dt [value]="orders" [rows]="20" [paginator]="true" [showCurrentPageReport]="true">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width: 3rem">
+                                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                            </th>
+                            <th pSortableColumn="orderId">orderId <p-sortIcon field="orderId"></p-sortIcon></th>
+                            <th pSortableColumn="name">name <p-sortIcon field="name"></p-sortIcon>
+                            <th pSortableColumn="phone">phone <p-sortIcon field="phone"></p-sortIcon>
+                            <th pSortableColumn="email">email <p-sortIcon field="email"></p-sortIcon>
+
+                            </th>
+
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-winner>
+                        <tr>
+                            <td>
+                                <p-tableCheckbox [value]="order"></p-tableCheckbox>
+                            </td>
+                            <td>{{orders[0].ordersId}}</td>
+                            <td>{{order.user.firstName}}</td> 
+                            <td>{{order.user.userPhone}}  </td>
+                            <td>{{order.user.userEmail}}  </td>
+
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+
+        </tbody>
+    </table>
+    In total there are {{orders ? orders.length : 0 }} raffles.
+
+</div> -->

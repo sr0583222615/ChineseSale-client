@@ -1,0 +1,20 @@
+<div class="rows">
+    <div class="col col-7">
+ <div   class="card" *ngFor="let o of orders; let i = index">
+    <p>num of OrderItems:{{o.id}}</p>
+    <p>name:{{o.user.firstName}} {{o.user.lastName}}</p>
+    <p>phone:{{o.user.userPhone}}</p>
+    <p>email:{{o.user.userEmail}}</p>
+
+</div>  
+</div>
+ </div>
+<!-- 
+ export class OrderDetailes{
+    id:number
+    dateTime:Date
+    orders:orders[]
+    user:User
+    usersId:string
+    ordersId:number -->
+

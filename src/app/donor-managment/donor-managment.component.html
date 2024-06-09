@@ -1,0 +1,135 @@
+<p-toolbar class="my-toolbar" styleClass="mb-4">
+
+    <ng-template pTemplate="left">
+        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
+    (click)="openNew()" ></button>
+        <!-- <button pButton pRipple  icon="pi pi-chart-pie" class="p-button-danger" 
+            ></button> -->
+    </ng-template>
+    <ng-template pTemplate="center">
+        <h1>Donorss</h1> 
+    </ng-template>
+    <ng-template pTemplate="right">
+    </ng-template>
+</p-toolbar> 
+<div>
+
+
+    <p-table #dt [value]="Donorss" [rows]="5" [paginator]="true"
+
+    [globalFilterFields]="['cost']" 
+    [(selection)]="selectedDonors" 
+    [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            <h5 class="m-0">Manage Donors</h5>
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                    <input placeholder="Search by..." pInputText type="text" [(ngModel)]="inputValue"  (keyup)="filterByGift(this.inputValue)" />
+                    <br>
+                    <span style="color: rgb(125, 125, 126);font-weight: 400;" > name , gift , email....</span>
+                           </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 3rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th pSortableColumn="donorFullName">Name <p-sortIcon field="donorFullName"></p-sortIcon></th>
+            <th pSortableColumn="donorPhone">Phone <p-sortIcon field="donorPhone"></p-sortIcon></th>
+            <th pSortableColumn="donorEmail">Email <p-sortIcon field="donorEmail"></p-sortIcon></th>
+            <th pSortableColumn="listDonation">Donations <p-sortIcon field="listDonation"></p-sortIcon></th>
+            <th pSortableColumn="typeOfGift">typeOfGift <p-sortIcon field="typeOfGift"></p-sortIcon></th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-Donors>
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="Donors"></p-tableCheckbox>
+            </td>           
+            <td>{{Donors.donorFullName}}</td>
+            <td>{{Donors.donorPhone}}</td>
+            <td>{{Donors.donorEmail}}</td>
+            <td>{{Donors.listDonation}}</td>
+            <td>{{Donors.typeOfGift}}</td>
+
+            <td>
+                <button   pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                (click)="editGift(Donors)" ></button>
+                    <button pButton pRipple                     
+                     icon="pi pi-chart-pie" class="p-button-danger"
+                    (click)="delete(Donors.donorsId)"></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            In total there are {{Donorss ? Donorss.length : 0 }} Donorss.
+        </div>
+    </ng-template>
+</p-table>
+</div>
+
+
+
+<p-dialog [(visible)]="DonorsDialog" [style]="{width: '450px'}" header="Donors Details" [modal]="true"
+styleClass="p-fluid">
+<ng-template pTemplate="content">
+    <div class="p-formgrid p-grid">
+        <div class="p-field">
+            <label for="donorFullName">donorsId</label>
+            <input type="text" pInputText id="donorsId" [(ngModel)]="Donors.donorsId" required autofocus />
+            <small class="p-error" *ngIf="submitted && !Donors.donorsId">donorsId is required.</small>
+        </div>
+    </div> 
+    <div class="p-field">
+        <label for="donorFullName">donorFullName</label>
+        <input type="text" pInputText id="donorFullName" [(ngModel)]="Donors.donorFullName" required autofocus />
+        <small class="p-error" *ngIf="submitted && !Donors.donorFullName">donorFullName is required.</small>
+    </div>
+   
+    <div class="p-field">
+        <label for="inventoryStatus">choose type</label>
+        <p-dropdown [(ngModel)]="Donors.typeOfGift" inputId="categoryId" [options]="types"
+            placeholder="Select">
+            <ng-template let-option pTemplate="item">
+                <span [class]="'Donors-badge status-' + option.value">{{option.label}}</span>
+            </ng-template>
+        </p-dropdown>
+    </div>
+    <!-- <div class="p-field">
+        <label for="giver">gift</label>
+        <input type="text" pInputText id="gift" [(ngModel)]="Donors.gift" required autofocus />
+        <small class="p-error" *ngIf="submitted && !Donors.gift">category is required.</small>
+    </div> -->
+    <div class="p-field">
+        <label for="donorFullName">donorPhone</label>
+        <input type="text" pInputText id="donorPhone" [(ngModel)]="Donors.donorPhone" required autofocus />
+        <small class="p-error" *ngIf="submitted && !Donors.donorPhone">donorPhone is required.</small>
+    </div>
+    <div class="p-field">
+        <label for="donorFullName">donorEmail</label>
+        <input type="text" pInputText id="donorPhone" [(ngModel)]="Donors.donorEmail" required autofocus />
+        <small class="p-error" *ngIf="submitted && !Donors.donorEmail">donorEmail is required.</small>
+    </div>
+    <!-- <div class="p-field">
+        <label for="listDonation">listDonation</label>
+        <input type="text" pInputText id="listDonation" [(ngModel)]="Donors.listDonation" required autofocus />
+        <small class="p-error" *ngIf="submitted && !Donors">listDonation is required.</small>
+    </div> -->
+</ng-template>
+
+ <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button" (click)="hideDialog()"></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button" (click)="saveDonors()"></button>
+</ng-template>
+</p-dialog>
+
+<!-- {{donors | Json}} -->
+
+ <!-- <input pInputText type="text"
+                (input)="dt.filterGlobal($event.target.value, 'contains')"
+                    placeholder="Search..." /> -->

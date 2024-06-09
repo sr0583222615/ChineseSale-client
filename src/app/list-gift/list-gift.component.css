@@ -1,0 +1,51 @@
+.alert {
+    background-color: #070706; /* צבע רקע של ה-alert */
+    color: #f60e0e; /* צבע הטקסט ב-alert */
+    font-size: 18px; /* גודל טקסט ב-alert */
+  }
+  .custom-dialog .ui-dialog-content {
+    border-radius: 10px;
+    background-color: rgb(16, 15, 15); /* צבע רקע אדום */
+    background-image: url('https://via.placeholder.com/150'); /* תמונת זיקוקים */
+    background-size: cover;
+    color: rgb(1, 1, 1);
+  }
+  
+  .header-style {
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .content-style {
+    padding: 20px;
+  }
+  
+  /* .winner-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  } */
+
+  /* .header-style{
+    background-color: rgb(226, 76, 138);
+  } */
+.p-button-rounded{
+border-color: black;
+border-style:groove;
+  background-color: rgb(218, 20, 73);
+/* background-color:rgb(61, 114, 239); */
+/* background-color:rgb(239, 61, 82); */
+color: #dad5d5; /* צבע טקסט */
+font-size: 1rem;
+font-weight: 300px;
+
+}
+.p-button-text{
+  border-radius:10px #2b2727; /* צבע טקסט */
+
+}
+.p-butto{
+  background-color: rgb(249, 242, 247);
+}

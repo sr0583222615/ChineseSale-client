@@ -1,0 +1,38 @@
+
+<!-- <img class="imga" src="../../../assets/images/1295354-f2c82e99773c86f28460e196533fabae.jpg"> -->
+<!-- <img class="imga" src="../../../logo-blog.png"> -->
+
+<!-- <div class="row"> -->
+        <!-- <div class="col col-2">
+            <div class="link" > -->
+
+                <!-- <a routerLink="list-gift" routerLinkActive="active-link">gift</a>
+                <a routerLink="menu" routerLinkActive="active-link">menu</a>
+                <a routerLink="buy" routerLinkActive="active-link">buy</a>
+                <a routerLink="pay" routerLinkActive="active-link">pay</a>
+                <a routerLink="donor-managment" routerLinkActive="active-link">donor</a>
+                <a routerLink="card" routerLinkActive="active-link">card</a>
+                <a routerLink="login" routerLinkActive="active-link">login</a>
+                <a routerLink="register" routerLinkActive="active-link">register</a>
+                <a routerLink="Winner" routerLinkActive="active-link">Winner</a>
+                <a routerLink="Order" routerLinkActive="active-link">Order</a>
+                <a routerLink="OrderDetailes" routerLinkActive="active-link">OrderDetailes</a> -->
+
+<!-- 
+            </div>
+        </div> -->
+        
+<p dir="rtl">{{today }}</p>
+<p-tabMenu dir="rtl" [model]="items" [activeItem]="activeItem" >
+    <ng-template pTemplate="item" let-item>
+        <a (click)="changeRoute(item)" class="p-menuitem-link flex justify-content-between align-items-center p-3">
+            <div>
+                <span style="font-size: 1.3rem" [class]="item.icon"></span>
+                <span style="font-size: 1.3rem"> {{ item.label }}</span>
+            </div>
+        </a>
+    </ng-template>
+</p-tabMenu>
+        <router-outlet></router-outlet>
+    <!-- </div> -->
+    <!-- <img class="imga" src="../../../assets/images/2.jpg"> -->

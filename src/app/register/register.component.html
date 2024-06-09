@@ -1,0 +1,101 @@
+
+
+<form  [formGroup]="frmPerson">
+    <div class="a">
+        <div class="ui-g ui-fluid">
+            <div class="p-field">
+                <label for="password">password</label><br>
+                 <input type="text" type="password" pInputText id="password"    maxlength="9"  formControlName="userId" /> <br>
+                <small class="p-error" *ngIf="!frmPerson.controls['userId'].valid && frmPerson.controls['userId'].touched">password is required</small>
+
+            </div>
+            <div class="p-field">
+                <label for="password">userName</label><br>
+                 <input type="text" type="password" pInputText id="userName"   maxlength="4" formControlName="userName"   /> <br>
+                <small class="p-error" *ngIf="!frmPerson.controls['userName'].valid && frmPerson.controls['userName'].touched">userName is required</small>
+            </div>
+            <div class="p-field">
+                <label for="name"> First Name</label>  <br>
+                <input type="text" pInputText id="firstName"   formControlName="firstName"/> <br>
+                <small class="p-error" *ngIf="!frmPerson.controls['firstName'].valid && frmPerson.controls['firstName'].touched">firstName is required</small>
+            </div>
+
+            <div class="p-field">
+                <label for="name">Last Name</label><br>
+                <input type="text" pInputText id="lastName" formControlName="lastName" /><br>
+                <small class="p-error" *ngIf="!frmPerson.controls['lastName'].valid && frmPerson.controls['lastName'].touched">lastName is required.</small>
+            </div>
+        
+            <div class="p-field">
+                <label for="name">Email</label> <br>
+                <input type="text" pInputText id="userEmail"    formControlName="userEmail"/><br>
+                <small class="p-error" *ngIf="!frmPerson.controls['userEmail'].valid && frmPerson.controls['userEmail'].touched">email is required /  syntax not ok</small>
+            </div>
+
+            <div class="p-field">
+                <label for="name"> Phone</label>  <br>
+                <input type="text" pInputText id="userPhone"  formControlName="userPhone" /> <br>
+                <small  class="p-error" *ngIf="!frmPerson.controls['userPhone'].valid && frmPerson.controls['userPhone'].touched">phone is required/ /  syntax not ok</small>
+            </div>
+
+            <div class="p-field">
+                <label for="name">role</label> <br>
+                <input type="text" pInputText id="role"  formControlName="role"/><br>
+                <small class="p-error" *ngIf="!frmPerson.controls['role'].valid && frmPerson.controls['role'].touched">role is required.</small>
+            </div>
+        </div>
+
+        <!-- <button pButton pRipple label="finish" [disabled]="frmPerson.invalid"  class="p-button-text" (click)="registerUser()"></button> -->
+        <button pButton pRipple label="finish" [disabled]="frmPerson.invalid"  class="p-button" (click)="registerUser()"></button>
+
+        </div>
+    </form>
+    <!-- required autofocus -->
+
+<!-- <div class="a">
+    <div class="ui-g ui-fluid">
+    
+    
+    
+        
+        <div class="p-field">
+            <label for="password">password</label><br>
+             <input type="text" type="password" pInputText id="password"    maxlength="8" equired autofocus class="form-control" formControlName="UsersId" />
+            <small [ngClass]="{'has-error':!frmPerson.controls['UsersId'].valid && frmPerson.controls['UsersId'].touched}" class="p-error" *ngIf="!client.UsersId">password is required.</small>
+        </div>
+        <div class="p-field">
+            <label for="password">userName</label><br>
+             <input type="text" type="password" pInputText id="userName" [(ngModel)]="client.userName" maxlength="8"  formControlName="userName" /> <br>
+            <small class="p-error" *ngIf="!client.userName">userName is required.</small>
+        </div>
+        <div class="p-field">
+            <label for="name"> First Name</label>  <br>
+            <input type="text" maxlength="30" pInputText id="firstName" [(ngModel)]="client.firstName"  formControlName="firstName"/> <br>
+            <small class="p-error" *ngIf="!client.firstName">firstName is required.</small>
+        </div>
+        <div class="p-field">
+            <label for="name"> Phone</label>  <br>
+            <input type="text" maxlength="20" pInputText id="userPhone" [(ngModel)]="client.userPhone" class="form-control" formControlName="userPhone" /> <br>
+            <small class="p-error" *ngIf="!client.userPhone">firstName is required.</small>
+        </div>
+        <div class="p-field">
+            <label for="name">Last Name</label><br>
+            <input type="text"z pInputText id="lastName" [(ngModel)]="client.lastName" class="form-control" formControlName="lastName" /><br>
+            <small class="p-error" *ngIf="!client.lastName">lastName is required.</small>
+        </div>
+    
+        <div class="p-field">
+            <label for="name">Email</label> <br>
+            <input type="text" pInputText id="userEmail" [(ngModel)]="client.userEmail"class="form-control" formControlName="userEmail" /><br>
+            <small class="p-error" *ngIf="!client.userEmail">email is required.</small>
+        </div>
+        
+        <div class="p-field">
+            <label for="name">role</label> <br>
+            <input type="text" pInputText id="role" [(ngModel)]="client.role" class="form-control" formControlName="role" /><br>
+            <small class="p-error" *ngIf="!client.role">email is required.</small>
+        </div>
+    </div>
+    <button pButton pRipple label="finish" class="p-button-text" (click)="registerUser(client)"></button>
+    
+    </div> -->

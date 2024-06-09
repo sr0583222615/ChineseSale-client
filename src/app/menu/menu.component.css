@@ -1,0 +1,24 @@
+.image-container {
+    display: flex;
+}
+
+.image-container img {
+    margin-right: 10px; /* מרווח בין התמונות */
+}
+.imga{
+
+    display: flex;
+    width: 104%;
+    height: 46vw;
+    position: fixed;
+    top: 105px;
+}
+.a{
+font-family:inherit;
+margin-left: 400px;
+color:rgb(219, 219, 211);
+}
+
+.p-menuitem-link{
+    color:black
+}

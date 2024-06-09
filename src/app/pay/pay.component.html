@@ -1,0 +1,31 @@
+<p-dialog [(visible)]="dialog" [style]="{width: '450px' }" header="client Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+
+        <div class="p-field">
+            <label for="password">card number</label>
+            <input  type="text" type="password" pInputText id="cardNumber" maxlength="19"  [(ngModel)]="cardNumber" />
+            <small class="p-error" *ngif="submit && !cardNumber">this filed is required</small>
+        </div>
+
+        <div class="p-field">
+            <label for="password">cvv</label>
+            <input  type="text" type="password" pInputText id="cvv" maxlength="3"  [(ngModel)]="cvv" />
+            <small class="p-error" *ngif="submit && !cvv"> this filed is required</small>
+
+        </div>
+
+        <div class="p-field">
+            <label for="datetime">Date</label>
+            <p-calendar [(ngModel)]="selectedDate"></p-calendar>
+            <small class="p-error" *ngIf="submit && !selectedDate">This field is required</small>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button  pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="confirm()"></button>
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        סה"כ {{ counter? counter : 0 }} 
+
+    </ng-template>

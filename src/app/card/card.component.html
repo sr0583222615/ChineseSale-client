@@ -1,0 +1,13 @@
+<p-button (click)="pay()" label="Pay Now!!"  class="p-table" ></p-button>
+<!-- <p>{{counter}}</p> -->
+<div class="rows">
+    <div class="col col-7">
+ <div   class="card" *ngFor="let g of GiftLists; let i = index">
+    <img class="imgg" src="../../../assets/images/{{g.giftUrlImage}}">
+    <p>{{g.giftId}}__{{g.giftName}}__{{g.giftTicketCost }} $</p>
+<div class="togther">
+     <input  class="quantity-label" pInputText id="inputNumber" [(ngModel)]="g.quantity" >
+    <p-button (click)="delete(g)" label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.2em'}"></p-button>
+</div>  </div>
+</div>
+ </div>

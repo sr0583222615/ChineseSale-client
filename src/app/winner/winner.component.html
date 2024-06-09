@@ -1,0 +1,38 @@
+<div class="lottery-winners">
+    <table class="winners-table">
+        <tbody>
+            <div>
+                <h2 class="a">The lucky winners of the Chinese lottery </h2>
+                <p-table #dt [value]="winners" [rows]="20" [paginator]="true" [showCurrentPageReport]="true">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width: 3rem">
+                                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                            </th>
+                            <th pSortableColumn="WinnersId">WinnersId <p-sortIcon field="WinnersId"></p-sortIcon></th>
+                            <th pSortableColumn="WinnerName">WinnerName <p-sortIcon field="WinnerName"></p-sortIcon>
+                            </th>
+
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-winner>
+                        <tr>
+                            <td>
+                                <p-tableCheckbox [value]="winner"></p-tableCheckbox>
+                            </td>
+                            <td>{{ winner.winnerName}}</td>
+                            <!-- <td>
+                                <img src="../../../assets/images/{{ winner.gift.giftUrlImage }}">
+                            </td> -->
+                            <td>{{winner.gift.giftName}}  </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+
+        </tbody>
+    </table>
+    In total there are {{winners ? winners.length : 0 }} raffles.
+
+</div>

@@ -1,0 +1,100 @@
+<p-toolbar class="my-toolbar" styleClass="mb-4">
+    <ng-template pTemplate="left">
+
+        <div><app-add-edit [(GiftListDialog)]="GiftListDialog " [GiftList]="GiftList"
+                [GiftLists]="GiftLists" (flag1)="flag($event)"></app-add-edit></div>
+    </ng-template>
+    <ng-template pTemplate="center">
+        <h1>All products🎉</h1>
+    </ng-template>
+    <ng-template pTemplate="right">
+        <button (click)="allMony()" pButton pRipple label="allMony" icon="pi Price" class="p-button"></button>
+
+    </ng-template>
+</p-toolbar>
+<div>
+    <p-table #dt [value]="GiftLists" [rows]="3" [paginator]="true" [globalFilterFields]="['giftTicketCost']"
+        [(selection)]="selectedGiftLists" [rowHover]="true" dataKey="id"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h5 class="m-0">Manage GiftLists</h5>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input placeholder="Search by..." pInputText type="text" [(ngModel)]="inputValue"
+                        (keyup)="filter(this.inputValue)" />
+                    <br>
+                    <span style="color: rgb(190, 190, 209);font-weight: 400;">donor,gift order's
+                        num....</span>
+
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="giftId">Barcode <p-sortIcon field="giftId"></p-sortIcon></th>
+                <th pSortableColumn="giftName">giftName <p-sortIcon field="giftName"></p-sortIcon></th>
+                <th pSortableColumn="giftTicketCost">Price <p-sortIcon field="giftTicketCost"></p-sortIcon></th>
+                <th pSortableColumn="giftCatagory">Catagory <p-sortIcon field="giftCatagory"></p-sortIcon></th>
+                <th pSortableColumn="donorToGift">donors <p-sortIcon field="donorToGift"></p-sortIcon></th>
+
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-GiftList>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="GiftList"></p-tableCheckbox>
+
+                </td>
+                <td>{{GiftList.giftId}}</td>
+                <td>{{GiftList.giftName}}</td>
+                <td>{{GiftList.giftTicketCost | currency:'USD'}}</td>
+                <td>{{GiftList.giftCatagory}}</td>
+                <td>{{GiftList.donorToGift}}</td>
+                <td>
+
+                    <button pButton pRipple icon="pi pi-pencil" style="color: #f6f8f5;" class="p-button-rounded p-button-success mr-2"
+                        (click)="reload(this.GiftList)"></button>
+
+                    <button pButton pRipple icon="pi pi-chart-pie" style="color: #f8f9fd;" class="p-button-rounded p-button-success mr-2"
+                        (click)="deleteGiftList(GiftList)"
+                       ></button> 
+
+                    <button pButton pRipple class="p-butto"
+                        (click)="raffle(GiftList.giftId)" style="color: #381ff3;">raffle</button>  .
+
+                    <button pButton pRipple class="p-button-rounded p-button-success mr-2"
+                        (click)="ordersGift(GiftList.giftId)" style="color: #f8f8f6;">all orders's gift</button>
+
+                    <!-- <button pButton pRipple class="p-button-rounded p-button-success mr-2"
+                        (click)="OrderDetailes()" style="color: #f9f5f7;">OrderDetailes</button>  -->
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                In total there are {{GiftLists ? GiftLists.length : 0 }} GiftLists.
+            </div>
+        </ng-template>
+    </p-table>
+</div>
+<p-dialog [(visible)]="GiftListDialog2" [modal]="true" [style]="{'max-width.px': 450 }" [styleClass]="'custom-dialog'">
+    <ng-template pTemplate="header">
+        <div class="header-style">
+            <h2 style="color: rgb(31, 6, 6);">🌟you so lucky 🌟</h2>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <div class="content-style" >
+            <h2 class="winner-name">{{winner}} - you are the winner ! 🏆✨</h2>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+<!-- <button pButton pRipple class="p-button-rounded p-button-success mr-2"
+(click)="filterBuyTheBest()">filterBuyTheBest</button> -->

@@ -1,0 +1,68 @@
+/* a{
+    display:block;
+    margin: 0px;
+    /* direction: rtl; */
+/* } */ */
+
+.active-link {
+    color: rgb(221, 48, 155);
+}
+.table-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-toolbar{
+    height: 200px;
+}
+.my-css{
+    height: calc(100vh - 300px);
+    width: 80vw;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    direction: rtl;
+}
+/* סגנון עבור המלבן סביב הקישורים */
+.link {
+    display: flex;
+    overflow-x: auto; /* אפשרות לגלילה אוטומטית אם הקישורים יחרפו את הרוחב */
+    /* border: 2px solid black; מסגרת שחורה */
+    /* background-color: black; רקע שחור */
+        /* direction: rtl; */
+
+    padding: 10px; /* מרווח פנימי */
+}
+
+/* סגנון עבור כל הקישורים */
+.styled-link {
+    text-decoration: none;
+    color: rgb(231, 36, 127); /* צבע הטקסט ברקע שחור */
+    padding: 8px 12px; /* מרווח פנימי */
+    margin: 0 5px; /* מרווח חיצוני בין כל קישור */
+    border-radius: 5px; /* רינוע מעגלי לכפתורים */
+    transition: background-color 0.3s ease, color 0.3s ease; /* אנימציה של צבע הרקע והטקסט בעת העברת העכבר */
+}
+
+/* סגנון עבור קישור כאשר עוברים עליו */
+.styled-link:hover {
+    background-color: #333; /* רקע אפור כהה בעת העברת העכבר */
+    color: rgb(218, 20, 73); /* צבע הטקסט בעת העברת העכבר */
+}
+
+/* סגנון עבור קישור פעיל */
+.active-link {
+    font-weight: bold; /* הדגשת הקישור הפעיל */
+    color: rgb(196, 47, 119); /* צבע קישור פעיל */
+}
+
+.imga{
+    margin-left: 1200px;
+    direction: ltr;
+    height: 200px;
+    width: 200px;
+
+}
+body {
+    background-color: rgb(135, 147, 46); /* צבע רקע של כל הדף */
+}

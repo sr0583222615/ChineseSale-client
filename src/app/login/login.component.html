@@ -1,0 +1,19 @@
+
+ <div class="a">
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <input  type="text" pInputText placeholder="userName" maxlength="9"  [(ngModel)]="client.UserName"> 
+        </div>
+    </div>
+
+   <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <input type="password" pInputText placeholder="password" maxlength="9" [(ngModel)]="client.Password">
+        </div>
+    </div> 
+</div> <br>
+
+<p-button (click)="login()" label="login"  styleClass="p-table" [style]="{'margin-left': '.2em', 'width':'207px'}"></p-button>
+<br>
+

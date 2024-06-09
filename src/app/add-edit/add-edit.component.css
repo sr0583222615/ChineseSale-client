@@ -1,0 +1,66 @@
+.bold {
+  color: rgb(232, 85, 114);
+}
+
+.b5 {
+  appearance: none;
+  background-color: rgb(242, 119, 160);
+  ;
+  border-style: none;
+  box-shadow: rgb(235, 94, 141);
+  ;
+  /* box-sizing: border-box; */
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  /* padding: 1rem 1.3rem; */
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.b5:hover {
+  background-color: #e498be;
+  box-shadow: #e61771 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.b5:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .b5 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+.form-group {
+  padding-bottom: 10px;
+}
+
+.ng-invalid .ng-touched {
+  border-color: red;
+  border-width: 2px;
+}
+
+.p-button {
+  border-color: black;
+  border-style: groove;
+  background-color: rgb(218, 20, 73);
+  color: #dad5d5;
+  font-size: 1rem;
+  font-weight: 500;
+
+}

@@ -1,0 +1,31 @@
+<div
+><p-button (click)="moveToCart()" label="Card" icon="pi-card" styleClass="p-button-secondary"></p-button></div>
+    <div class =input>
+
+<div class="p-field">
+     <!-- <p-dropdown  [(ngModel)]="inputValue"  (mousemove)="filter(this.inputValue)" inputId="giftCatagoryId" [options]="giftCatagory"
+        placeholder="Select">
+        <ng-template let-option pTemplate="item">
+            <span [class]="'GiftList-badge status-' + option.value">{{option.label}}</span>
+        </ng-template>
+    </p-dropdown> -->
+ <input placeholder="Search by category..." pInputText type="text" [(ngModel)]="inputValue"  (keyup)="filter(this.inputValue)" />  
+<button pButton  pRipple  label="order by the cheeper"  (click) ="filterOrder()"> </button>       .
+<button pButton  pRipple  label="order by the expensive"  (click) ="filterOrderHighToLow()"> </button>   
+</div>  
+</div>
+<div   class="card" *ngFor="let GiftList of GiftLists; let i = index">
+    <img class="imga" src="../../../assets/images/{{GiftList.giftUrlImage}}">
+    <br><br>
+    <!-- <p>{{GiftList.number}}_{{GiftList.name}}_ price:{{GiftList.cost}} _Donors:{{GiftList.giver}}</p> -->
+    <p>{{GiftList.giftId}}_{{GiftList.giftName}}_ price:{{GiftList.giftTicketCost}}</p> 
+
+    <p-button (click)="addTocard(GiftList)" label="add To Card" icon="pi-card" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+    <input  class="quantity-label" pInputText id="inputNumber" [(ngModel)]="GiftList.quantity" type="number"  min="1" max="99" >
+    <!-- <input placeholder="count of products" type="number" value="1" [style]="{'width': '50px'}"  [(ngModel)]="GiftList.count"> -->
+</div>
+
+
+
+
+

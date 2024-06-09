@@ -1,0 +1,59 @@
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(36, 35, 35, 0.2);
+    width: 700px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    padding:50px;
+    float:left;
+    height:300px;
+    margin:6px;
+    margin-left: 40%;
+ font-size: large;
+    color: rgb(171, 22, 79);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+.input{
+    margin-left: 860px;
+}
+.imgg{
+    width: 320px;
+    margin-left:50px;
+    height:250px;
+}
+.lottery-winners {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+.title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.winners-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.winners-table th, .winners-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.winners-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+.a {
+    text-align: center; /* מרכז את הטקסט באמצעות */
+    font-family: 'Arial', sans-serif; /* בחירת גופן */
+    font-size: 28px; /* גודל כתב */
+    color: #dad5d5; /* צבע טקסט */
+    padding: 10px; /* מרווח פנימי מסביב לטקסט */
+    background-color: #df1c1c; /* צבע רקע */
+  }

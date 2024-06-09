@@ -1,0 +1,37 @@
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width:367px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    padding:15px;
+    float:left;
+    height:520px;
+    margin:6px;
+}
+.input{
+    margin-left: 860px;
+}
+.imga{
+    width: 320px;
+    /* margin-left:50px; */
+
+    height:260px;
+}
+.quantity-btn{
+    width: 90px;
+    height: 30px;
+    background-color: #a0a6aa;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px; 
+  }
+  .quantity-label {
+    width: 70px;
+    text-align: center;
+    margin: 10px;
+  }
+  
