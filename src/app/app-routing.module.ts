@@ -26,7 +26,6 @@ const routes: Routes = [
    {path:'Winner',component:WinnerComponent},
    {path:'Order',component:OrderComponent},
    {path:'OrderDetailes',component:OrderDetailesComponent},
-
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
