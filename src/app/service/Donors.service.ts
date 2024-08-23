@@ -14,11 +14,11 @@ export class DonorsService {
   reloadDonors$:Observable<boolean>=this.reloadDonorsSubject.asObservable();
   
     getD(): Observable<Donors[]>{
-     let url = 'https://localhost:44346/api/Donors';
+     let url = 'https://localhost:7219/api/Donors';
     return this.HttpClient.get<Donors[]>(url);
   }
   delete(id:string): Observable<number>{
-    let url = 'https://localhost:44346/api/Donors/'+id;
+    let url = 'https://localhost:7219/api/Donors/'+id;
     return this.HttpClient.delete<number>(url);
   }
   setReloadGift(){
@@ -26,20 +26,20 @@ export class DonorsService {
     this.reloadDonorsSubject.next(!flag);
   }
   addGDonors(g:Donors): Observable<number>{
-    let url = 'https://localhost:44346/api/Donors/add';
+    let url = 'https://localhost:7219/api/Donors/add';
     return this.HttpClient.post<number>(url,g);
   }
   updateGift(g:Donors): Observable<Donors>{
-    let url = 'https://localhost:44346/api/Donors/' +g.donorsId;
+    let url = 'https://localhost:7219/api/Donors/' +g.donorsId;
     return this.HttpClient.put<Donors>(url,g);
   }
   detByFilter(id:string): Observable<Donors>{
-    let url = 'https://localhost:44346/api/Donors/name'+id;
+    let url = 'https://localhost:7219/api/Donors/name'+id;
     console.log(url);
     return this.HttpClient.get<Donors>(url);
   }
   fillterByGift(s:string): Observable<Donors[]>{
-    let url = 'https://localhost:44346/api/Donors/ByDonotion'+s;
+    let url = 'https://localhost:7219/api/Donors/ByDonotion'+s;
    return this.HttpClient.get<Donors[]>(url);
  }
 }

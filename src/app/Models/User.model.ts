@@ -5,5 +5,5 @@ export class User{
     userPhone:string
     userEmail:string
     userName:string
-    role:string
+    role:string="guest";
 }

@@ -15,12 +15,12 @@ export class GiftService {
   reloadGift$: Observable<boolean> = this.reloadGiftSubject.asObservable();
   gifts:GiftList[];
   getGift(): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift';
+    let url = 'https://localhost:7219/api/Gift';
     //return null;
     return this.httpClient.get<GiftList[]>(url);
   }
   addGift(g:GiftList): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift';
+    let url = 'https://localhost:7219/api/Gift';
     let token = localStorage.getItem('token')
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
@@ -28,7 +28,7 @@ export class GiftService {
     });    return this.httpClient.post<GiftList[]>(url,g,{ headers })//.pipe(map(a=>this.gifts=a))
   }
   updateGift(g:GiftList): Observable<number>{
-    let url = 'https://localhost:44346/api/Gift/'+ g.giftId;
+    let url = 'https://localhost:7219/api/Gift/'+ g.giftId;
     let token = localStorage.getItem('token')
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
@@ -38,7 +38,7 @@ export class GiftService {
     return this.httpClient.put<number>(url,g,{ headers });
   }
   delete(id:number): Observable<number>{
-    let url = 'https://localhost:44346/api/Gift/'+id;
+    let url = 'https://localhost:7219/api/Gift/'+id;
     let token = localStorage.getItem('token')
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
@@ -47,43 +47,43 @@ export class GiftService {
     return this.httpClient.delete<number>(url,{ headers });
   }
   byOrder(): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift/CostBYorder';
+    let url = 'https://localhost:7219/api/Gift/CostBYorder';
     //return null;
     return this.httpClient.get<GiftList[]>(url);
   }
   filterOrderHighToLow(): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift/CostByExpensive';
+    let url = 'https://localhost:7219/api/Gift/CostByExpensive';
     //return null;
     return this.httpClient.get<GiftList[]>(url);
   }
   filterDonor(d:string): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift/FindByDonor'+d;
+    let url = 'https://localhost:7219/api/Gift/FindByDonor'+d;
     //return null;
     return this.httpClient.get<GiftList[]>(url);
   }
 
   filterGIft(d:string): Observable<GiftList>{
-    let url = 'https://localhost:44346/api/Gift/findByName'+d;
+    let url = 'https://localhost:7219/api/Gift/findByName'+d;
     //return null;
     return this.httpClient.get<GiftList>(url);
   }
   filterCategory(d:string): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift/FindByCategory'+d;
+    let url = 'https://localhost:7219/api/Gift/FindByCategory'+d;
     //return null;
     return this.httpClient.get<GiftList[]>(url);
   }
   filterOrders(d:number): Observable<GiftList[]>{
-    let url = 'https://localhost:44346/api/Gift/FilterByOrders'+d;
+    let url = 'https://localhost:7219/api/Gift/FilterByOrders'+d;
     //return null;
     return this.httpClient.get<GiftList[]>(url);
   }
   filterBuyTheBest(): Observable<GiftList>{
-    let url = 'https://localhost:44346/api/Orders/OrderByTheBest';
+    let url = 'https://localhost:7219/api/Orders/OrderByTheBest';
     //return null;
     return this.httpClient.get<GiftList>(url);
   }
   raffle(d:number): Observable<string>{
-    let url = 'https://localhost:44346/api/Winner/'+d;
+    let url = 'https://localhost:7219/api/Winner/'+d;
     let token = localStorage.getItem('token')
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
@@ -92,18 +92,18 @@ export class GiftService {
     return this.httpClient.post<string>(url,d,{ headers });
   }
   Allmomy(): Observable<number>{
-    let url = 'https://localhost:44346/api/Winner/allmony';
+    let url = 'https://localhost:7219/api/Winner/allmony';
     //return null;
     return this.httpClient.get<number>(url);
   }
 
   ordersGift(id:number): Observable<orders[]>{
-    let url = 'https://localhost:44346/api/Orders/'+id;
+    let url = 'https://localhost:7219/api/Orders/'+id;
     //return null;
     return this.httpClient.get<orders[]>(url);
   }
   OrderDetailes(): Observable<OrderDetailes[]>{
-    let url = 'https://localhost:44346/api/Orders/BuyerDetails'
+    let url = 'https://localhost:7219/api/Orders/BuyerDetails'
     //return null;
     return this.httpClient.get<OrderDetailes[]>(url);
   }

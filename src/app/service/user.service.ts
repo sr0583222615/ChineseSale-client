@@ -15,7 +15,7 @@ export class UserService {
 
   addGDonors(g:Donors): Observable<number>{
     console.log(g);
-    let url = 'https://localhost:44346/api/Donors/add';
+    let url = 'https://localhost:7219/api/Donors/add';
     //return null;
     return this.HttpClient.post<number>(url,g);
   }
@@ -23,7 +23,7 @@ export class UserService {
     console.log(g); 
     console.log(g.userId);
     
-    let url = 'https://localhost:44346/api/User';
+    let url = 'https://localhost:7219/api/User';
     //return null;
     return this.HttpClient.post<number>(url,g);
   }
@@ -41,7 +41,7 @@ export class UserService {
   }
   login(g:UserLogin): Observable<string>{
     console.log("from the service"+g.Password+g.UserName); 
-    let url = 'https://localhost:44346/api/User/login';
+    let url = 'https://localhost:7219/api/User/login';
     //return null;
     return this.HttpClient.post<string>(url,g);
   }
@@ -49,7 +49,7 @@ export class UserService {
 
 
 // pay(arr:GiftList[]): Observable<number>{
-//   let url = 'https://localhost:44346/api/Orders/update';
+//   let url = 'https://localhost:7219/api/Orders/update';
 //   let token =localStorage.getItem('token')
   
 //   const headers = new HttpHeaders({
